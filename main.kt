@@ -56,7 +56,7 @@ fun groupStudent(students: List<Student>, passScore: Double = 5.0): Map<Boolean,
 
 fun main() {
 
-    val students = listOf(
+    val studentsList = listOf(
         Student("Sv1", 20, listOf(8.4, 9.2, 7.0)),
         Student("Sv2", 21, listOf(6.5, 5.8, 7.5)),
         Student("Sv3", 19, listOf(4.5, 3.4, 5.5)),
@@ -65,17 +65,17 @@ fun main() {
     )
 
     println("Diem trung binh")
-    for (student in students) {
+    for (student in studentsList) {
         println("${student.name}: ${averageScore(student)}")
     }
 
-    val top = topStudent(students)
+    val top = topStudent(studentsList)
     if (top != null) {
         println("Sinh vien co diem TB cao nhat:")
         println("${top.name}: ${averageScore(top)}")
     }
 
-    val result = groupStudent(students)
+    val result = groupStudent(studentsList)
     println("Danh sach dau:")
     for (student in result[true]!!) {
         println("${student.name}: ${averageScore(student)}")
